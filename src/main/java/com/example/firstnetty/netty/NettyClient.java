@@ -10,6 +10,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.AttributeKey;
 
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class NettyClient {
