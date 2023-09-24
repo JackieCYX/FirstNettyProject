@@ -1,4 +1,4 @@
-package com.example.firstnetty.netty;
+package com.example.firstnetty.netty.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -15,6 +15,8 @@ import java.util.concurrent.TimeUnit;
 
 public class NettyClient {
     private static final int MAX_RETRY = 5;
+    private static final String HOST = "127.0.0.1";
+    private static final int PORT = 8000;
 
     public static void main(String[] args) {
         NioEventLoopGroup workerGroup = new NioEventLoopGroup();
@@ -38,7 +40,7 @@ public class NettyClient {
                     }
                 });
         // 4.建立连接
-        connect(bootstrap, "juejin.im", 80, MAX_RETRY);
+        connect(bootstrap, HOST, PORT, MAX_RETRY);
     }
 
     private static void connect(Bootstrap bootstrap, String host, int port, int retry) {
